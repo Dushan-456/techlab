@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Navodya Dushan - Web Developer</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+         rel="stylesheet" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet" />
+      <script>
+         tailwind.config = {
+            theme: {
+               extend: {
+                  fontFamily: {
+                     inter: ["Inter", "sans-serif"],
+                  },
+                  colors: {
+                     primary: "#3B82F6",
+                     secondary: "#1E40AF",
+                     accent: "#F59E0B",
+                  },
+               },
+            },
+         };
+      </script>
+      <style>
+         body {
+            font-family: "Inter", sans-serif;
+         }
+         .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+         }
+         .card-hover {
+            transition: all 0.3s ease;
+         }
+         .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+               0 10px 10px -5px rgba(0, 0, 0, 0.04);
+         }
+         .skill-bar {
+            transition: width 2s ease-in-out;
+         }
+         .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+         }
+         .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      </style>
+   </head>
+   <body class="bg-gray-50 text-gray-800">
+      <!-- Navigation -->
+      <nav
+         class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+               <div class="flex items-center">
+                  <h1 class="text-2xl font-bold text-primary">
+                     Navodya Dushan
+                  </h1>
+               </div>
+               <div class="hidden md:block">
+                  <div class="ml-10 flex items-baseline space-x-4">
+                     <a
+                        href="#home"
+                        class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                        >Home</a
+                     >
+                     <a
+                        href="#about"
+                        class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                        >About</a
+                     >
+                     <a
+                        href="#skills"
+                        class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                        >Skills</a
+                     >
+                     <a
+                        href="#projects"
+                        class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                        >Projects</a
+                     >
+                     <a
+                        href="#contact"
+                        class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                        >Contact</a
+                     >
+                  </div>
+               </div>
+               <div class="md:hidden">
+                  <button
+                     id="mobile-menu-btn"
+                     class="text-gray-700 hover:text-primary focus:outline-none">
+                     <i class="fas fa-bars text-xl"></i>
+                  </button>
+               </div>
+            </div>
+         </div>
+         <!-- Mobile menu -->
+         <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+               <a
+                  href="#home"
+                  class="mobile-nav-link block px-3 py-2 text-gray-700 hover:text-primary"
+                  >Home</a
+               >
+               <a
+                  href="#about"
+                  class="mobile-nav-link block px-3 py-2 text-gray-700 hover:text-primary"
+                  >About</a
+               >
+               <a
+                  href="#skills"
+                  class="mobile-nav-link block px-3 py-2 text-gray-700 hover:text-primary"
+                  >Skills</a
+               >
+               <a
+                  href="#projects"
+                  class="mobile-nav-link block px-3 py-2 text-gray-700 hover:text-primary"
+                  >Projects</a
+               >
+               <a
+                  href="#contact"
+                  class="mobile-nav-link block px-3 py-2 text-gray-700 hover:text-primary"
+                  >Contact</a
+               >
+            </div>
+         </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section id="home" class="min-h-screen flex items-center gradient-bg">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+               <div class="fade-in">
+                  <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                     Navodya Dushan
+                  </h1>
+                  <h2 class="text-2xl md:text-3xl text-white/90 mb-8">
+                     Web Developer & Software Engineering Student
+                  </h2>
+                  <p class="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
+                     Passionate about crafting engaging online experiences with
+                     a curiosity for technology and a desire to create.
+                  </p>
+                  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                     <a
+                        href="#projects"
+                        class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        View My Work
+                     </a>
+                     <a
+                        href="#contact"
+                        class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+                        Get In Touch
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-white">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+               <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+               <p class="text-xl text-gray-600">
+                  I'm great in what I do and I love doing it
+               </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+               <div class="fade-in">
+                  <h3 class="text-2xl font-semibold mb-6">
+                     Hello! I'm Navodya Dushan
+                  </h3>
+                  <p class="text-gray-600 mb-6">
+                     A passionate web developer and Software Engineering Student
+                     with a penchant for crafting engaging online experiences.
+                     Over the years, I've honed my skills in HTML, CSS,
+                     JavaScript, Python, WordPress and various frameworks to
+                     build dynamic websites that not only look great but also
+                     function flawlessly.
+                  </p>
+
+                  <div class="space-y-4">
+                     <div class="flex items-center">
+                        <i class="fas fa-user text-primary mr-3"></i>
+                        <span
+                           ><strong>Full Name:</strong> Navodya Dushan
+                           Kodikara</span
+                        >
+                     </div>
+                     <div class="flex items-center">
+                        <i class="fas fa-birthday-cake text-primary mr-3"></i>
+                        <span
+                           ><strong>Date of Birth:</strong> 24th of August
+                           2001</span
+                        >
+                     </div>
+                     <div class="flex items-center">
+                        <i class="fas fa-calendar text-primary mr-3"></i>
+                        <span><strong>Age:</strong> 24 Years</span>
+                     </div>
+                     <div class="flex items-center">
+                        <i class="fas fa-flag text-primary mr-3"></i>
+                        <span><strong>Nationality:</strong> Sri Lankan</span>
+                     </div>
+                     <div class="flex items-center">
+                        <i class="fas fa-heart text-primary mr-3"></i>
+                        <span><strong>Civil Status:</strong> Single</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="fade-in">
+                  <div class="bg-gray-100 rounded-lg p-8">
+                     <h4 class="text-xl font-semibold mb-6">
+                        Educational Qualifications
+                     </h4>
+                     <div class="space-y-4">
+                        <div class="flex items-start">
+                           <i
+                              class="fas fa-graduation-cap text-primary mr-3 mt-1"></i>
+                           <div>
+                              <h5 class="font-semibold">
+                                 Bachelor of Software Engineering Honours
+                              </h5>
+                              <p class="text-gray-600">OUSL</p>
+                           </div>
+                        </div>
+                        <div class="flex items-start">
+                           <i
+                              class="fas fa-certificate text-primary mr-3 mt-1"></i>
+                           <div>
+                              <h5 class="font-semibold">
+                                 Web Designing Certificate
+                              </h5>
+                              <p class="text-gray-600">
+                                 University of Moratuwa
+                              </p>
+                           </div>
+                        </div>
+                        <div class="flex items-start">
+                           <i
+                              class="fas fa-certificate text-primary mr-3 mt-1"></i>
+                           <div>
+                              <h5 class="font-semibold">
+                                 Front-End Web Development Certificate
+                              </h5>
+                              <p class="text-gray-600">
+                                 University of Moratuwa
+                              </p>
+                           </div>
+                        </div>
+                        <div class="flex items-start">
+                           <i
+                              class="fas fa-certificate text-primary mr-3 mt-1"></i>
+                           <div>
+                              <h5 class="font-semibold">Python Certificate</h5>
+                              <p class="text-gray-600">
+                                 University of Moratuwa
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="py-20 bg-gray-50">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+               <h2 class="text-4xl font-bold text-gray-900 mb-4">Services</h2>
+               <p class="text-xl text-gray-600">What I can do for you</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+               <div class="bg-white rounded-lg p-6 card-hover text-center">
+                  <div
+                     class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                     <i class="fas fa-mobile-alt text-primary text-2xl"></i>
+                  </div>
+                  <h3 class="text-xl font-semibold mb-3">App Development</h3>
+                  <p class="text-gray-600">
+                     Android, iOS, Desktop App and Software Developments
+                  </p>
+               </div>
+
+               <div class="bg-white rounded-lg p-6 card-hover text-center">
+                  <div
+                     class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                     <i class="fas fa-code text-primary text-2xl"></i>
+                  </div>
+                  <h3 class="text-xl font-semibold mb-3">Web Development</h3>
+                  <p class="text-gray-600">
+                     Transforming ideas into functional and visually appealing
+                     websites
+                  </p>
+               </div>
+
+               <div class="bg-white rounded-lg p-6 card-hover text-center">
+                  <div
+                     class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                     <i class="fas fa-palette text-primary text-2xl"></i>
+                  </div>
+                  <h3 class="text-xl font-semibold mb-3">Graphic Designing</h3>
+                  <p class="text-gray-600">
+                     Flyers, Logo Designs, Animations, Social Media Management
+                  </p>
+               </div>
+
+               <div class="bg-white rounded-lg p-6 card-hover text-center">
+                  <div
+                     class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                     <i class="fas fa-paint-brush text-primary text-2xl"></i>
+                  </div>
+                  <h3 class="text-xl font-semibold mb-3">UX/UI Designing</h3>
+                  <p class="text-gray-600">
+                     UX/UI Designing for websites, Mobile Apps and Web
+                     Applications
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 bg-white">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+               <h2 class="text-4xl font-bold text-gray-900 mb-4">My Skills</h2>
+               <p class="text-xl text-gray-600">Technologies I work with</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+               <div class="fade-in">
+                  <h3 class="text-2xl font-semibold mb-8">Technical Skills</h3>
+                  <div class="space-y-6">
+                     <div>
+                        <div class="flex justify-between mb-2">
+                           <span class="font-medium">HTML/CSS</span>
+                           <span class="text-primary font-semibold">98%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                           <div
+                              class="skill-bar bg-primary h-2 rounded-full"
+                              data-width="98"></div>
+                        </div>
+                     </div>
+
+                     <div>
+                        <div class="flex justify-between mb-2">
+                           <span class="font-medium">JavaScript</span>
+                           <span class="text-primary font-semibold">94%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                           <div
+                              class="skill-bar bg-primary h-2 rounded-full"
+                              data-width="94"></div>
+                        </div>
+                     </div>
+
+                     <div>
+                        <div class="flex justify-between mb-2">
+                           <span class="font-medium">Python</span>
+                           <span class="text-primary font-semibold">74%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                           <div
+                              class="skill-bar bg-primary h-2 rounded-full"
+                              data-width="74"></div>
+                        </div>
+                     </div>
+
+                     <div>
+                        <div class="flex justify-between mb-2">
+                           <span class="font-medium">React</span>
+                           <span class="text-primary font-semibold">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                           <div
+                              class="skill-bar bg-primary h-2 rounded-full"
+                              data-width="75"></div>
+                        </div>
+                     </div>
+
+                     <div>
+                        <div class="flex justify-between mb-2">
+                           <span class="font-medium">WordPress</span>
+                           <span class="text-primary font-semibold">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                           <div
+                              class="skill-bar bg-primary h-2 rounded-full"
+                              data-width="70"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="fade-in">
+                  <h3 class="text-2xl font-semibold mb-8">
+                     Technologies & Tools
+                  </h3>
+                  <div class="grid grid-cols-3 gap-4">
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i
+                           class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                        <p class="text-sm font-medium">HTML5</p>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i
+                           class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                        <p class="text-sm font-medium">CSS3</p>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i
+                           class="fab fa-js-square text-4xl text-yellow-500 mb-2"></i>
+                        <p class="text-sm font-medium">JavaScript</p>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i
+                           class="fab fa-python text-4xl text-green-500 mb-2"></i>
+                        <p class="text-sm font-medium">Python</p>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
+                        <p class="text-sm font-medium">React</p>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i
+                           class="fab fa-wordpress text-4xl text-blue-600 mb-2"></i>
+                        <p class="text-sm font-medium">WordPress</p>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i
+                           class="fab fa-bootstrap text-4xl text-purple-500 mb-2"></i>
+                        <p class="text-sm font-medium">Bootstrap</p>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i class="fab fa-php text-4xl text-indigo-500 mb-2"></i>
+                        <p class="text-sm font-medium">PHP</p>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i class="fab fa-java text-4xl text-red-500 mb-2"></i>
+                        <p class="text-sm font-medium">Java</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 bg-gray-50">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+               <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                  My Projects
+               </h2>
+               <p class="text-xl text-gray-600">Some of my recent work</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <div class="bg-white rounded-lg overflow-hidden card-hover">
+                  <div
+                     class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                     <i class="fas fa-shopping-cart text-white text-4xl"></i>
+                  </div>
+                  <div class="p-6">
+                     <h3 class="text-xl font-semibold mb-2">
+                        React E-Commerce Website
+                     </h3>
+                     <p class="text-gray-600 mb-4">
+                        A modern e-commerce platform built with React, featuring
+                        shopping cart, user authentication, and payment
+                        integration.
+                     </p>
+                     <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                           class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+                           >React</span
+                        >
+                        <span
+                           class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm"
+                           >Node.js</span
+                        >
+                        <span
+                           class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm"
+                           >MongoDB</span
+                        >
+                     </div>
+                     <div class="flex gap-2">
+                        <a
+                           href="#"
+                           class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-secondary transition-colors"
+                           >View Project</a
+                        >
+                        <a
+                           href="#"
+                           class="border border-primary text-primary px-4 py-2 rounded text-sm hover:bg-primary hover:text-white transition-colors"
+                           >GitHub</a
+                        >
+                     </div>
+                  </div>
+               </div>
+
+               <div class="bg-white rounded-lg overflow-hidden card-hover">
+                  <div
+                     class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                     <i class="fas fa-users text-white text-4xl"></i>
+                  </div>
+                  <div class="p-6">
+                     <h3 class="text-xl font-semibold mb-2">
+                        MERN User Management System
+                     </h3>
+                     <p class="text-gray-600 mb-4">
+                        A comprehensive user management application with CRUD
+                        operations, authentication, and role-based access
+                        control.
+                     </p>
+                     <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                           class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+                           >MongoDB</span
+                        >
+                        <span
+                           class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm"
+                           >Express</span
+                        >
+                        <span
+                           class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+                           >React</span
+                        >
+                        <span
+                           class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm"
+                           >Node.js</span
+                        >
+                     </div>
+                     <div class="flex gap-2">
+                        <a
+                           href="#"
+                           class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-secondary transition-colors"
+                           >View Project</a
+                        >
+                        <a
+                           href="#"
+                           class="border border-primary text-primary px-4 py-2 rounded text-sm hover:bg-primary hover:text-white transition-colors"
+                           >GitHub</a
+                        >
+                     </div>
+                  </div>
+               </div>
+
+               <div class="bg-white rounded-lg overflow-hidden card-hover">
+                  <div
+                     class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                     <i class="fas fa-credit-card text-white text-4xl"></i>
+                  </div>
+                  <div class="p-6">
+                     <h3 class="text-xl font-semibold mb-2">
+                        Interactive Credit Card Form
+                     </h3>
+                     <p class="text-gray-600 mb-4">
+                        A beautiful and interactive credit card details form
+                        with real-time validation and smooth animations.
+                     </p>
+                     <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                           class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+                           >HTML</span
+                        >
+                        <span
+                           class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm"
+                           >CSS</span
+                        >
+                        <span
+                           class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm"
+                           >JavaScript</span
+                        >
+                     </div>
+                     <div class="flex gap-2">
+                        <a
+                           href="#"
+                           class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-secondary transition-colors"
+                           >View Project</a
+                        >
+                        <a
+                           href="#"
+                           class="border border-primary text-primary px-4 py-2 rounded text-sm hover:bg-primary hover:text-white transition-colors"
+                           >GitHub</a
+                        >
+                     </div>
+                  </div>
+               </div>
+
+               <div class="bg-white rounded-lg overflow-hidden card-hover">
+                  <div
+                     class="h-48 bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center">
+                     <i class="fas fa-graduation-cap text-white text-4xl"></i>
+                  </div>
+                  <div class="p-6">
+                     <h3 class="text-xl font-semibold mb-2">
+                        SE LAW ACADEMY - LMS
+                     </h3>
+                     <p class="text-gray-600 mb-4">
+                        A comprehensive Learning Management System for law
+                        education with course management and student tracking.
+                     </p>
+                     <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                           class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+                           >PHP</span
+                        >
+                        <span
+                           class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm"
+                           >MySQL</span
+                        >
+                        <span
+                           class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm"
+                           >Bootstrap</span
+                        >
+                     </div>
+                     <div class="flex gap-2">
+                        <a
+                           href="#"
+                           class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-secondary transition-colors"
+                           >View Project</a
+                        >
+                        <a
+                           href="#"
+                           class="border border-primary text-primary px-4 py-2 rounded text-sm hover:bg-primary hover:text-white transition-colors"
+                           >GitHub</a
+                        >
+                     </div>
+                  </div>
+               </div>
+
+               <div class="bg-white rounded-lg overflow-hidden card-hover">
+                  <div
+                     class="h-48 bg-gradient-to-br from-red-400 to-orange-500 flex items-center justify-center">
+                     <i class="fas fa-car text-white text-4xl"></i>
+                  </div>
+                  <div class="p-6">
+                     <h3 class="text-xl font-semibold mb-2">
+                        Vehicle Service Center Management
+                     </h3>
+                     <p class="text-gray-600 mb-4">
+                        A complete management system for vehicle service centers
+                        with appointment booking and service tracking.
+                     </p>
+                     <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                           class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+                           >PHP</span
+                        >
+                        <span
+                           class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm"
+                           >MySQL</span
+                        >
+                        <span
+                           class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm"
+                           >JavaScript</span
+                        >
+                     </div>
+                     <div class="flex gap-2">
+                        <a
+                           href="#"
+                           class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-secondary transition-colors"
+                           >View Project</a
+                        >
+                        <a
+                           href="#"
+                           class="border border-primary text-primary px-4 py-2 rounded text-sm hover:bg-primary hover:text-white transition-colors"
+                           >GitHub</a
+                        >
+                     </div>
+                  </div>
+               </div>
+
+               <div class="bg-white rounded-lg overflow-hidden card-hover">
+                  <div
+                     class="h-48 bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center">
+                     <i class="fas fa-utensils text-white text-4xl"></i>
+                  </div>
+                  <div class="p-6">
+                     <h3 class="text-xl font-semibold mb-2">
+                        7INN Family Restaurant
+                     </h3>
+                     <p class="text-gray-600 mb-4">
+                        A modern restaurant website with online menu,
+                        reservation system, and contact information.
+                     </p>
+                     <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                           class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+                           >HTML</span
+                        >
+                        <span
+                           class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm"
+                           >CSS</span
+                        >
+                        <span
+                           class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm"
+                           >JavaScript</span
+                        >
+                     </div>
+                     <div class="flex gap-2">
+                        <a
+                           href="#"
+                           class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-secondary transition-colors"
+                           >View Project</a
+                        >
+                        <a
+                           href="#"
+                           class="border border-primary text-primary px-4 py-2 rounded text-sm hover:bg-primary hover:text-white transition-colors"
+                           >GitHub</a
+                        >
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-white">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+               <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Me</h2>
+               <p class="text-xl text-gray-600">
+                  Let's work together on your next project
+               </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+               <div class="fade-in">
+                  <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                  <div class="space-y-4">
+                     <div class="flex items-center">
+                        <i class="fas fa-envelope text-primary mr-4"></i>
+                        <div>
+                           <p class="font-medium">Email</p>
+                           <p class="text-gray-600">
+                              navodyadushan123@gmail.com
+                           </p>
+                        </div>
+                     </div>
+                     <div class="flex items-center">
+                        <i class="fas fa-envelope text-primary mr-4"></i>
+                        <div>
+                           <p class="font-medium">Business Email</p>
+                           <p class="text-gray-600">
+                              info@techlabsoftwaresolution.com
+                           </p>
+                        </div>
+                     </div>
+                     <div class="flex items-center">
+                        <i class="fas fa-phone text-primary mr-4"></i>
+                        <div>
+                           <p class="font-medium">Phone</p>
+                           <p class="text-gray-600">+94 719675669</p>
+                        </div>
+                     </div>
+                     <div class="flex items-center">
+                        <i class="fas fa-phone text-primary mr-4"></i>
+                        <div>
+                           <p class="font-medium">Alternative Phone</p>
+                           <p class="text-gray-600">+94 763148583</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="mt-8">
+                     <h4 class="text-lg font-semibold mb-4">Social Links</h4>
+                     <div class="flex space-x-4">
+                        <a
+                           href="#"
+                           class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                           <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a
+                           href="#"
+                           class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                           <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a
+                           href="#"
+                           class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                           <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                           href="#"
+                           class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                           <i class="fab fa-whatsapp"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="fade-in">
+                  <form class="space-y-6">
+                     <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                           <label
+                              for="firstName"
+                              class="block text-sm font-medium text-gray-700 mb-2"
+                              >First Name</label
+                           >
+                           <input
+                              type="text"
+                              id="firstName"
+                              name="firstName"
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" />
+                        </div>
+                        <div>
+                           <label
+                              for="lastName"
+                              class="block text-sm font-medium text-gray-700 mb-2"
+                              >Last Name</label
+                           >
+                           <input
+                              type="text"
+                              id="lastName"
+                              name="lastName"
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" />
+                        </div>
+                     </div>
+                     <div>
+                        <label
+                           for="email"
+                           class="block text-sm font-medium text-gray-700 mb-2"
+                           >Email</label
+                        >
+                        <input
+                           type="email"
+                           id="email"
+                           name="email"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" />
+                     </div>
+                     <div>
+                        <label
+                           for="subject"
+                           class="block text-sm font-medium text-gray-700 mb-2"
+                           >Subject</label
+                        >
+                        <input
+                           type="text"
+                           id="subject"
+                           name="subject"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" />
+                     </div>
+                     <div>
+                        <label
+                           for="message"
+                           class="block text-sm font-medium text-gray-700 mb-2"
+                           >Your Message</label
+                        >
+                        <textarea
+                           id="message"
+                           name="message"
+                           rows="4"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                     </div>
+                     <button
+                        type="submit"
+                        class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-secondary transition-colors">
+                        Send Message
+                     </button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+               <h3 class="text-2xl font-bold mb-4">Navodya Dushan</h3>
+               <p class="text-gray-400 mb-6">
+                  Web Developer & Software Engineering Student
+               </p>
+               <div class="flex justify-center space-x-6 mb-6">
+                  <a
+                     href="#about"
+                     class="text-gray-400 hover:text-white transition-colors"
+                     >About</a
+                  >
+                  <a
+                     href="#skills"
+                     class="text-gray-400 hover:text-white transition-colors"
+                     >Skills</a
+                  >
+                  <a
+                     href="#projects"
+                     class="text-gray-400 hover:text-white transition-colors"
+                     >Projects</a
+                  >
+                  <a
+                     href="#contact"
+                     class="text-gray-400 hover:text-white transition-colors"
+                     >Contact</a
+                  >
+               </div>
+               <div class="border-t border-gray-800 pt-6">
+                  <p class="text-gray-400">
+                     &copy; 2025 Navodya Dushan. Developed & Designed by Dushan.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <script src="script.js"></script>
+   </body>
+</html>
